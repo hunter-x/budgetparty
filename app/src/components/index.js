@@ -24,7 +24,7 @@ import Landing from './Landing';
 import store from '../store';
 
 // Google Analytics
-ReactGA.initialize('UA-64394324-4')
+ReactGA.initialize('UA-64394')
 const history = createHistory()
 history.listen((location) => {
   ReactGA.set({ page: location.pathname })
@@ -36,6 +36,7 @@ addLocaleData([...en, ...es]);
 const language = (navigator.languages && navigator.languages[0]) ||
                      navigator.language ||
                      navigator.userLanguage;
+                     console.log(language);
 
 export default class App extends Component {
   constructor(props) {

@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
+import counterpart  from 'counterpart';
+import Translate    from 'react-translate-component';
+const _t = Translate.translate;
 
 import Navigation from './Navigation'
 import PartyLevelHeader from './PartyLevelHeader'
@@ -12,8 +15,44 @@ import backArrow from '../images/back_arrow.svg'
 import forwardArrow from '../images/forward_arrow.svg'
 
 const Department = (props) => {
-  const { services, departments, funds, user } = props;
+  let { services, departments, funds, user } = props;
   const { service_id, id } = props.match.params;
+  //Load Departements of the Specified Language only
+  let arr=[]
+  if (departments instanceof Array ) {
+    departments.map((department,index)=>{
+      if ((department.lan)===(counterpart.getLocale())) {
+        arr.push(department)
+      }
+    });
+  }else{
+    var departmentsArray = Object.keys(departments).map( (key)=> { return departments[key]; });
+    departmentsArray.map((department,index)=>{
+      if ((department.lan)===(counterpart.getLocale())) {
+        arr.push(department)
+      }
+    });
+  }
+  departments=arr;
+  
+  let inter=[]
+  if (services instanceof Array ) {
+    services.map((service,index)=>{
+      if ((service.lan)===(counterpart.getLocale())) {
+        inter.push(service)
+      }
+    });
+  }else{
+    var servicesArray = Object.keys(services).map( (key)=> { return services[key]; });
+    servicesArray.map((service,index)=>{
+      if ((service.lan)===(counterpart.getLocale())) {
+        inter.push(service)
+      }
+    });
+  }
+  services=inter;
+  //console.log("depComp",departments);
+  //console.log("servDepComp",services);
   const service = services[Number(service_id)];
   const department = departments[Number(id) - 1];
   const departmentIndex = service.departments.indexOf(Number(id)) + 1
@@ -21,14 +60,14 @@ const Department = (props) => {
   const nextLink = departmentIndex < serviceDepartments.length
     ? `/service/${service.index}/department/${Number(id) + 1}`
     : `/service/${service.index}`
-
+  //console.log('service',service,'department',department,'departmentIndex',departmentIndex,'serviceDepartments',serviceDepartments,"nextLink",nextLink);
   const handleNextClick = (dept, service, serviceDepts, departments, services, userId, e) => {
     props.onClickNext(dept, service, serviceDepts, departments, services, userId)
   }
 
   return (
     <div>
-      <Navigation service={service} funds={funds} showBack showTotalFunds showServiceFunds />
+      <Navigation service={department} funds={funds} showBack showTotalFunds showServiceFunds />
 
       <div className="Department">
         <PartyLevelHeader {...props}
@@ -44,7 +83,7 @@ const Department = (props) => {
           <Link to={`/service/${service_id}/department/${id}/learn-more`}
             className="Department__link"
           >
-            Learn More
+            {_t('department.more')}
           </Link>
 
           <DepartmentChangeByPercentButtons deptId={id} {...props} />
@@ -52,7 +91,7 @@ const Department = (props) => {
           <Link to={`/service/${service_id}/department/${id}/explain`}
             className="Department__link"
           >
-            <img src={comment} alt="Comment bubble icon"/> Explain your spending
+            <img src={comment} alt="Comment bubble icon"/> {_t('department.explain')}
           </Link>
 
           <div className="Department__review-buttons">
@@ -60,13 +99,13 @@ const Department = (props) => {
               className="Department__edit-button">
               <div className="flexconatiner">
                 <img src={backArrow} alt="Back Arrow" className="left" style={{padding: "6px 0 0 10px"}}/>
-                <span className="right" style={{paddingRight: "20px"}}>Prev</span>
+                <span className="right" style={{paddingRight: "20px"}}>{_t('department.prev')}</span>
               </div>
 
             </Link>
             <Link to={nextLink} onClick={handleNextClick.bind(this, department, service, service.departments, departments, services, user.uid)}
               className="Department__done-button">
-              <span className="left" style={{paddingLeft: "20px"}}>Next</span>
+              <span className="left" style={{paddingLeft: "20px"}}>{_t('department.next')}</span>
               <img src={forwardArrow} alt="Back Arrow" className="right" style={{padding: "6px 10px 0 0"}} />
             </Link>
           </div>

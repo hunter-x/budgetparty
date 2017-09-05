@@ -10,6 +10,7 @@ export default function Tabs(props) {
       {tabList.map((tab) => {
         return (
           <li key={tab.id}
+            style={{cursor:"pointer"}}
             className={tab.id === activeTab ? baseClass : `${baseClass} inactive-tab` }
             onClick={changeTab.bind(this, tab)}
           > {tab.text}

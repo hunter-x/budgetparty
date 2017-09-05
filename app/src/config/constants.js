@@ -1,11 +1,11 @@
 import firebase from 'firebase'
 
 const config = {
-  apiKey: "AIzaSyDVYXW7KD054GkOAzHb597yrEZMMxz0aDM",
-  authDomain: "budget-party.firebaseapp.com",
-  databaseURL: "https://budget-party.firebaseio.com",
-  storageBucket: "budget-party.appspot.com",
-  messagingSenderId: "784889150023"
+  apiKey: "AIzaSyCkwTGdXREhGA2Wi_OghbUEF4d-nlSXVYI",
+  authDomain: "budget-eb32d.firebaseapp.com",
+  databaseURL: "https://budget-eb32d.firebaseio.com/",
+  storageBucket: "budget-eb32d.appspot.com",
+  messagingSenderId: "975485670646"
 }
 
 firebase.initializeApp(config)

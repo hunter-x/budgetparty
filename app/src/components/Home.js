@@ -4,6 +4,8 @@ import Tabs from './Tabs'
 import AuthForm from './AuthForm'
 import GoogleAuth from './GoogleAuth'
 import logo from '../images/budget_party_logo.svg'
+import Translate    from 'react-translate-component';
+const _t = Translate.translate;
 
 import { auth, login, anonymous_auth } from '../helpers/auth'
 
@@ -54,11 +56,11 @@ export default class Home extends Component {
   getAuthForm = () => {
     return this.state.activeTab === 0
             ? <AuthForm actionHandler={this.handleRegister}
-                buttonText={"Create Account"}
+                buttonText={_t('login.create')}
                 errorText={this.state.errorText} />
             : <AuthForm actionHandler={this.handleLogin}
-                buttonText={"Sign in"}
-                errorText={this.state.errorText} />
+                buttonText={_t('login.signin')}
+                errorText={this.state.errorText===null?"":_t('login.invalid')} />
   }
 
   tabList = [
@@ -84,7 +86,7 @@ export default class Home extends Component {
           </div>
 
         </div>
-        <Link onClick={this.skipLogin} to="/intro/1" className="auth-form__skip">Skip Login</Link>
+        <Link onClick={this.skipLogin} to="/intro/1" className="auth-form__skip">{_t('login.skip')}</Link>
       </div>
     )
   }

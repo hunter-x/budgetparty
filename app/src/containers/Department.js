@@ -37,6 +37,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onClickNext: (department, service, serviceDepts, departments, services, userId) => {
+      //console.log("action dispatcher",services);
+      //console.log("action dispatcher srvice",service);
+      //console.log("action dispatcher departments",departments);
       if (!department.amount) {
         dispatch(changeDepartmentPercentChange(department.deptId, 0))
       }
@@ -49,6 +52,7 @@ const mapDispatchToProps = (dispatch) => {
       const isIncomplete = _.contains(departmentAmounts, null)
 
       if (hasProgress && isIncomplete) {
+        //console.log("in prog");
         dispatch(updateServiceStatus(service.index, 'in_progress'))
       } else {
         dispatch(updateServiceStatus(service.index, 'complete'))
@@ -58,7 +62,9 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(changeRemainingFundsAmout(services))
       persistToFirebase(userId, departments)
     },
+    
     onPercentChange: (dept, percentChange, departments, serviceIndex, services) => {
+      //console.log('dispatchpercentage',dept, 'percentChange', percentChange, 'departments', departments, 'serviceIndex', serviceIndex, 'services', services);
       dispatch(changeDepartmentPercentChange(dept.deptId, percentChange))
       dispatch(recalculateServiceAmount(serviceIndex, departments))
       dispatch(changeRemainingFundsAmout(services))

@@ -3,11 +3,21 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import Navigation from './Navigation'
 import PartyLevel from './PartyLevel'
-
+import counterpart  from 'counterpart';
+import Translate    from 'react-translate-component';
+const _t = Translate.translate;
 export default class Dashboard extends Component {
   render () {
-    const { services, funds, user } = this.props;
-
+    let { services, funds, user } = this.props;
+    //console.log(counterpart.getLocale());
+    //Load service adequate to language of the App--I tried to use splice but I had a bug in french version
+    let arr=[]
+    services.map((service,index)=>{
+      if ((service.lan)===(counterpart.getLocale())) {
+        arr.push(service)
+      }
+    });
+    services=arr;
     const getServiceLink = (service) => {
       // The Welcome Level should go back to the Intro pages...
       if (service.index === 0) return '/intro/1';

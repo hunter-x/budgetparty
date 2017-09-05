@@ -1,21 +1,20 @@
 import React from 'react'
 import { FormattedNumber } from 'react-intl'
 import PropTypes from 'prop-types';
+import Translate    from 'react-translate-component';
+const _t = Translate.translate;
 
 const ServiceFundsAvailable = (props) => {
   const { title, amount } = props.service
   const displayAmount = amount || 0
-
   return (
     <div className="ServiceFundsAvailable">
       <h4 className="TotalFundsAvailable__header">
-        {title} Spending
+        {title} {_t('navigation.spending')}
       </h4>
       <h4 className="TotalFundsAvailable__dollars">
         <FormattedNumber
           value={displayAmount}
-          style="currency" //eslint-disable-line
-          currency="USD"
           minimumFractionDigits={0}
           maximumFractionDigits={0}
         />

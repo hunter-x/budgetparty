@@ -1,6 +1,8 @@
 import React from 'react'
 import { FormattedNumber } from 'react-intl'
 import PropTypes from 'prop-types';
+import Translate    from 'react-translate-component';
+const _t = Translate.translate;
 
 const TotalFundAvailable = (props) => {
   const { generalFund, generalFundsRemaining } = props.funds
@@ -9,17 +11,15 @@ const TotalFundAvailable = (props) => {
   return (
     <div className="TotalFundsAvailable">
       <h4 className="TotalFundsAvailable__header">
-        Total Funds<br/>
-        Available
+        {_t('navigation.available')}<br/>
+        {_t('navigation.available2')}
       </h4>
       <h4 className="TotalFundsAvailable__dollars">
         <FormattedNumber
           value={remainingAmount}
-          style="currency" //eslint-disable-line
-          currency="USD"
           minimumFractionDigits={0}
           maximumFractionDigits={0}
-        />
+        /> Dinar
       </h4>
     </div>
   )

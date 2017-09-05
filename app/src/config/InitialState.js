@@ -5,5 +5,5 @@ import funds from '../data/funds';
 export default {
   services,
   departments,
-  funds,
+  funds
 }
