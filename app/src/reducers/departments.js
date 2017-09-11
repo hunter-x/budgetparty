@@ -3,8 +3,8 @@ import counterpart  from 'counterpart';
 
 function departments(state = InitialState.departments, action = {}) {
   const deptId = action.departmentId - 1
-  //console.log('depid',action.departmentId);
-  const deptIdFr = deptId + 24;
+ 
+  const deptIdFr = deptId + 21;
     //console.log('depidfr',action.departmentId+23);
 
   const deptState = state[deptId]
@@ -21,7 +21,8 @@ function departments(state = InitialState.departments, action = {}) {
       //console.log("deptId",deptId);
       //console.log('Look here for state',state);
       //console.log('Look here for action',action);
-
+      console.log('depid',action.departmentId-1);
+      console.log('state',state);
     let inter=[]        
     if (counterpart.getLocale()==="en") {
       newDeptState=deptState;
@@ -57,7 +58,7 @@ function departments(state = InitialState.departments, action = {}) {
         });
       }    
     }
-          state=inter;
+    state=inter;
 
     //console.log('newDeptState.percentChange',newDeptState);
     //console.log('action',action); 

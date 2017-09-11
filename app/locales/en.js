@@ -50,5 +50,29 @@ module.exports = {
       percent:"% from Last Year",
       reset:"Reset",
       departementSpending:"Department Spending from"
-    }
+    },
+    review:{
+        budget:"Your budget",
+        percent:" % From Goverment Budget",
+        submit:"Review & Submit",
+        increase:"increase",
+        decrease:"decrease",
+        titleReview:"Review Your Budget Changes",
+        subReview:"You opted to increase overall service spending from last years amount.",
+        by:"by",
+        revise:"Revise Service Spending",
+        prev:"Prev",
+        next:"Next",
+
+        save:"Save & Submit",
+        name:"Name",
+        mail:"Email",
+        student:"Are you a student?",
+        yes:"Yes",
+        no:"No",
+        schoolName:"What is the name of your school?",
+        zipcode:"Zipcode",
+        comments:"Comments",
+        saveRevise:"Revise"
+      }
 }

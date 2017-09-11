@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch) => {
       if (userId) {
         database.app.database().ref(`userResults/${userId}`).update(data)
       } else {
+        console.log('data',data);
         database.app.database().ref('userResults').push(data)
       }
     },

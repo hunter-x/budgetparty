@@ -147,7 +147,7 @@ const departments = [
     lan:"en"
   },
     {
-    name: "études des plan d'aménagement urbain en",
+    name: "acquisition de matériels de nettoiement et des chaussées en",
     description: 'desc',
     learnMore: 'acquisition de matériels de nettoiement et des chaussées',
     amount: null,
@@ -158,7 +158,7 @@ const departments = [
     lan:"en"
   },
   {
-    name: "Autres études en",
+    name: "programmes et équipements informatiques",
     description: 'desc',
     learnMore: 'programmes et équipements informatiques',
     amount: null,
@@ -168,7 +168,18 @@ const departments = [
     deptId: 15,
     lan:"en"
   },
-      {
+  {
+    name: "acquiqition des moyens de transport",
+    description: 'desc',
+    learnMore: 'programmes et équipements informatiques',
+    amount: null,
+    explainYourSpending: null,
+    lastYearAmount: 137414,
+    percentChange: 0,
+    deptId: 16,
+    lan:"en"
+  }, 
+  {
     name: "dépenses diverses en",
     description: 'desc',
     learnMore: 'acquisition de matériels de nettoiement et des chaussées',
@@ -176,7 +187,7 @@ const departments = [
     explainYourSpending: null,
     lastYearAmount: 14252,
     percentChange: 0,
-    deptId: 16,
+    deptId: 17,
     lan:"en"
   },
   {
@@ -187,9 +198,9 @@ const departments = [
     explainYourSpending: null,
     lastYearAmount: 8208,
     percentChange: 0,
-    deptId: 17,
+    deptId: 18,
     lan:"en"
-  },  
+  },
   {
     name: "acquisition de terrains en",
     description: 'desc',
@@ -198,51 +209,7 @@ const departments = [
     explainYourSpending: null,
     lastYearAmount: 250000,
     percentChange: 0,
-    deptId: 18,
-    lan:"en"
-  },
-    {
-    name: "Autres études en",
-    description: 'desc',
-    learnMore: 'programmes et équipements informatiques',
-    amount: null,
-    explainYourSpending: null,
-    lastYearAmount: 26646,
-    percentChange: 0,
-    deptId: 15,
-    lan:"en"
-  },
-      {
-    name: "dépenses diverses en",
-    description: 'desc',
-    learnMore: 'acquisition de matériels de nettoiement et des chaussées',
-    amount: null,
-    explainYourSpending: null,
-    lastYearAmount: 14252,
-    percentChange: 0,
-    deptId: 16,
-    lan:"en"
-  },
-  {
-    name: "aménagement espaces verts et entrées des villes en",
-    description: 'desc',
-    learnMore: 'programmes et équipements informatiques',
-    amount: null,
-    explainYourSpending: null,
-    lastYearAmount: 8208,
-    percentChange: 0,
-    deptId: 17,
-    lan:"en"
-  },  
-  {
-    name: "acquisition de terrains en" ,
-    description: 'desc',
-    learnMore: 'programmes et équipements informatiques',
-    amount: null,
-    explainYourSpending: null,
-    lastYearAmount: 250000,
-    percentChange: 0,
-    deptId: 18,
+    deptId: 19,
     lan:"en"
   },
     {
@@ -253,7 +220,7 @@ const departments = [
     explainYourSpending: null,
     lastYearAmount: 57142,
     percentChange: 0,
-    deptId: 19,
+    deptId: 20,
     lan:"en"
   },
     {
@@ -264,9 +231,10 @@ const departments = [
     explainYourSpending: null,
     lastYearAmount: 19052,
     percentChange: 0,
-    deptId: 20,
+    deptId: 21,
     lan:"en"
   },
+ 
   /* fr */
    {
     name: 'Revêtement des chausées Fr version',
@@ -417,9 +385,9 @@ const departments = [
   },
   ,
     {
-    name: "études des plan d'aménagement urbain",
+    name: "acquisition de matériels de nettoiement et des chaussées",
     description: 'desc',
-    learnMore: 'acquisition de matériels de nettoiement et des chaussées',
+    learnMore: 'Detaile description on the process and opperation',
     amount: null,
     explainYourSpending: null,
     lastYearAmount: 189595,
@@ -438,6 +406,17 @@ const departments = [
     deptId: 15,
     lan:"fr"
   },
+  {
+    name: "acquiqition des moyens de transport",
+    description: 'desc',
+    learnMore: 'programmes et équipements informatiques',
+    amount: null,
+    explainYourSpending: null,
+    lastYearAmount: 137414,
+    percentChange: 0,
+    deptId: 16,
+    lan:"fr"
+  },  
       {
     name: "dépenses diverses",
     description: 'desc',
@@ -446,7 +425,7 @@ const departments = [
     explainYourSpending: null,
     lastYearAmount: 14252,
     percentChange: 0,
-    deptId: 16,
+    deptId: 17,
     lan:"fr"
   },
   {
@@ -457,7 +436,7 @@ const departments = [
     explainYourSpending: null,
     lastYearAmount: 8208,
     percentChange: 0,
-    deptId: 17,
+    deptId: 18,
     lan:"fr"
   },  
   {
@@ -468,51 +447,7 @@ const departments = [
     explainYourSpending: null,
     lastYearAmount: 250000,
     percentChange: 0,
-    deptId: 18,
-    lan:"fr"
-  },
-    {
-    name: "Autres études",
-    description: 'desc',
-    learnMore: 'programmes et équipements informatiques',
-    amount: null,
-    explainYourSpending: null,
-    lastYearAmount: 26646,
-    percentChange: 0,
-    deptId: 15,
-    lan:"fr"
-  },
-      {
-    name: "dépenses diverses",
-    description: 'desc',
-    learnMore: 'acquisition de matériels de nettoiement et des chaussées',
-    amount: null,
-    explainYourSpending: null,
-    lastYearAmount: 14252,
-    percentChange: 0,
-    deptId: 16,
-    lan:"fr"
-  },
-  {
-    name: "aménagement espaces verts et entrées des villes",
-    description: 'desc',
-    learnMore: 'programmes et équipements informatiques',
-    amount: null,
-    explainYourSpending: null,
-    lastYearAmount: 8208,
-    percentChange: 0,
-    deptId: 17,
-    lan:"fr"
-  },  
-  {
-    name: "acquisition de terrains",
-    description: 'desc',
-    learnMore: 'programmes et équipements informatiques',
-    amount: null,
-    explainYourSpending: null,
-    lastYearAmount: 250000,
-    percentChange: 0,
-    deptId: 18,
+    deptId: 19,
     lan:"fr"
   },
     {
@@ -523,7 +458,7 @@ const departments = [
     explainYourSpending: null,
     lastYearAmount: 57142,
     percentChange: 0,
-    deptId: 19,
+    deptId: 20,
     lan:"fr"
   },
     {
@@ -534,7 +469,7 @@ const departments = [
     explainYourSpending: null,
     lastYearAmount: 19052,
     percentChange: 0,
-    deptId: 20,
+    deptId: 21,
     lan:"fr"
   }
 ]

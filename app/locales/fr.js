@@ -51,5 +51,29 @@
       percent:"% from Last Year",
       reset:"Reset",
       departementSpending:"Department Spending from"
-    }
+    },
+    review:{
+      budget:"Votre budget",
+      percent:"% de budget de gouvernement",
+      submit:"Review & Submit",
+      increase:"incrémentation",
+      decrease:"décrémentation",
+      titleReview:"Revoir les changements de budget",
+      subReview:"You opted to increase overall service spending from last years amount.",
+      by:"par",
+      revise:"Reviser Service Spending",
+      prev:"Prev",
+      next:"Next",
+
+      save:"Enregistrer e envoyer",
+      name:"Nom",
+      mail:"Email",
+      student:"Vous etes étudiant ?",
+      yes:"Oui",
+      no:"Non",
+      schoolName:"Quel est le nom de votre école ?",
+      zipcode:"Code Postale",
+      comments:"Commentaire",
+      saveRevise:"Reviser"
+  }
 }

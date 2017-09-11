@@ -6,11 +6,19 @@ import Navigation from '../Navigation'
 import IntroPage from './IntroPage'
 import ReviewPage from './ReviewPage'
 import SavePage from './SavePage'
+import counterpart  from 'counterpart';
 
 class Submit extends Component {
   render() {
-    const { funds, services } = this.props;
-
+    let { funds, services } = this.props;
+    //load adequate language services
+    let arr=[];
+    services.map((service,index)=>{
+      if ((service.lan)===(counterpart.getLocale())) {
+        arr.push(service)
+      }
+    });
+    services=arr;
     return (
       <div>
         <Navigation funds={funds} showBack showTotalFunds />

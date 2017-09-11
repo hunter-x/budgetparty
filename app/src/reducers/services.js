@@ -64,7 +64,6 @@ function services(state = InitialState.services, action = {}) {
 
       const delta = Number(((sumOfDepartments - sumOfLastYearDepartments) / sumOfLastYearDepartments * 100).toFixed(2))
 
-
       if ((counterpart.getLocale())==="en") {
         newServiceStateEn.amount = sumOfDepartments
         newServiceStateEn.percentChange = delta
@@ -82,7 +81,7 @@ function services(state = InitialState.services, action = {}) {
           ...state.slice(service.index + 10)
         ]
       }
-      console.log('newstate2',newState);
+      //console.log('newstate2',newState);
       return newState
     case 'UPDATE_COMPLETED_DEPARTMENTS':
       service = state[serviceIndex]
@@ -95,13 +94,21 @@ function services(state = InitialState.services, action = {}) {
         return memo
       }, 0)
 
-      newServiceState.completeSections = updatedCount
-      newState = [
-        ...state.slice(0, service.index),
-        newServiceState,
-        ...state.slice(service.index + 1)
-      ]
-
+      if ((counterpart.getLocale())==="en") {
+        newServiceStateEn.completeSections = updatedCount
+        newState = [
+          ...state.slice(0, service.index),
+          newServiceStateEn,
+          ...state.slice(service.index + 1)
+        ]
+      }else if((counterpart.getLocale())==="fr"){
+        newServiceStateFr.completeSections = updatedCount
+        newState = [
+          ...state.slice(0, service.index+9),
+          newServiceStateFr,
+          ...state.slice(service.index + 10)
+        ]
+      }
       return newState
 
     default:
